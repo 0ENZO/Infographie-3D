@@ -44,7 +44,8 @@ void Robot::Draw()
      glTranslatef(0,0,0);
      glColor3f(0,1,0);
      //glutSolidTorus(0.15,1,10,25);
-     glutSolidTorus(0.1,2.4,30,30);
+     glScalef(0.65,0.65,0.2);
+     glutSolidTorus(1.5,2.4,30,30);
     glPopMatrix();
 
 }
