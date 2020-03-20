@@ -16,9 +16,14 @@ Robot::Robot(float x, float y, float z)
 
 void Robot::Draw()
 {
+
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
     glPushMatrix();
-        glScalef(2,1,1);
-        glColor3f(0.5,0.5,0);
-        glutWireCube(1.0);
+        glRotatef(35,0,0,1);
+        // glTranslatef(10,10,10);
+        glColor3f(1,0,0);
+        gluCylinder(params,3,3,3,30,5);
     glPopMatrix();
+
 }

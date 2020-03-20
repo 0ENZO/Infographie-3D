@@ -45,8 +45,9 @@ void Map::LoadTextures()
 
 void Map::DrawGround()
 {
-    Block *b = new Block(2.0f, 2.0f, 2.0f);
-    Robot *r = new Robot(1.0f,2.0f,0.0f);
+    // Block *b = new Block(2.0f, 2.0f, 2.0f);
+    Robot *r = new Robot(5,5,5);
+    /*
 
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0f, 1.0f, 1.0f);
@@ -74,7 +75,8 @@ void Map::DrawGround()
     b->SetTexture(RIGHT, ListeTextures[17]);
     b->SetTexture(LEFT, ListeTextures[9]);
     b->SetTexture(SPHERE, ListeTextures[19]);
-    b->Draw();
+    */
+    // b->Draw();
     r->Draw();
 }
 
