@@ -6,13 +6,13 @@ Camera::Camera()
     deltaForward = 0;
     deltaStrafe = 0;
 
-    posx = 0.0f;
+    posx = 3.0f;
     posy = 1.5f;
     posz = 5.0f;
 
-    dirx = 0.0f;
+    dirx = -3.0f;
     diry = 0.0f;
-    dirz = -1.0f;
+    dirz = -2.5f;
 
     angleh = 0.0f;
     anglev = 0.0f;
