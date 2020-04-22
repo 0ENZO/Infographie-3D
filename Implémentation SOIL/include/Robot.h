@@ -13,7 +13,10 @@ class Robot
         Robot();
         Robot(float x, float y, float z);
         void Draw();
+        void Draw_torso();
+        void Draw_custom_torso();
         void Draw_handles();
+        void Draw_screws();
 
         float x;
         float y;
