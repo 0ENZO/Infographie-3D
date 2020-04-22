@@ -25,13 +25,41 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(90,1,0,0);
         glTranslatef(0,0,0);
-        glColor3f(1,1,1);
-        gluCylinder(params,1.5,1.5,2,20,5);
+        glColor3f(0.86,0.86,0.86);
+        gluCylinder(params,1.5,1.5,2,50,50);
     glPopMatrix();
 
-Draw_handles();
+    // HAUT DU BUSTE
 
-    // Couche inf�rieur du buste
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,0);
+         glColor3f(0.5,0.5,0.5);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,50,50);
+    glPopMatrix();
+
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,-0.1);
+         glColor3f(0.86,0.86,0.86);
+         glScalef(0.79,0.79,0.3);
+         glutSolidTorus(0.8,1.15,50,50);
+    glPopMatrix();
+
+    //BAS DU BUSTE
+
+    glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,2);
+         glColor3f(0.86,0.86,0.86);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,30,30);
+    glPopMatrix();
+
+    Draw_handles();
+
+    // Couche inférieur du buste
     glPushMatrix();
         glRotatef(90,1,0,0);
         glTranslatef(0,0,1);
@@ -39,7 +67,7 @@ Draw_handles();
         gluCylinder(params,1.55,1.55,1,30,10);
     glPopMatrix();
 
-    //Rectangles d�cal�s qui traverse le buste
+    //Rectangles décalés qui traverse le buste
     glPushMatrix();
         glColor3f (1,0.65,0);
         glRotatef(90,0,1,0);
@@ -116,26 +144,6 @@ Draw_handles();
          glColor3f(1,0.65,0);
          glScalef(0.45,0.45,0.1);
          glutSolidTorus(0.5,0.5,30,30);
-    glPopMatrix();
-
-    // HAUT DU BUSTE
-
-   glPushMatrix();
-         glRotatef(90,1,0,0);
-         glTranslatef(0,0,0);
-         glColor3f(1,1,0);
-         glScalef(0.65,0.65,0.2);
-         glutSolidTorus(1.15,1.15,30,30);
-    glPopMatrix();
-
-    //BAS DU BUSTE
-
-    glPushMatrix();
-         glRotatef(90,1,0,0);
-         glTranslatef(0,0,2);
-         glColor3f(1,0,0);
-         glScalef(0.65,0.65,0.2);
-         glutSolidTorus(1.15,1.15,30,30);
     glPopMatrix();
 
 // FIN DU BUSTE
@@ -960,7 +968,7 @@ void Robot::Draw_handles()
             glPushMatrix();
                  glRotatef(90,0,1,0);
                  glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical,support_depth);
-                 glColor3f(0.41,0.41,0.41);
+                 glColor3f(0.1,0.1,0.1);
                  glScalef(0.05,0.05,0.01);
                  glutSolidTorus(0.5,0.5,30,30);
             glPopMatrix();
@@ -968,14 +976,14 @@ void Robot::Draw_handles()
             glPushMatrix();
                 glRotatef(90,0,1,0);
                 glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical,support_depth - 0.1);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.10,15,5);
             glPopMatrix();
 
             glPushMatrix();
                  glRotatef(90,0,1,0);
                  glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical + difference_vertical,support_depth);
-                 glColor3f(0.41,0.41,0.41);
+                 glColor3f(0.1,0.1,0.1);
                  glScalef(0.05,0.05,0.01);
                  glutSolidTorus(0.5,0.5,30,30);
             glPopMatrix();
@@ -983,7 +991,7 @@ void Robot::Draw_handles()
             glPushMatrix();
                 glRotatef(90,0,1,0);
                 glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical + difference_vertical,support_depth - 0.1);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.10,15,5);
             glPopMatrix();
 
@@ -993,7 +1001,7 @@ void Robot::Draw_handles()
                 // y: plan horizontal en positif vers la droite
                 // x: profondeur en positif vers l'arri�re
                 glTranslatef(handle_depth,handle_horizontal + (sign*i*2*0.09),handle_vertical);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.2,15,5);
             glPopMatrix();
 
