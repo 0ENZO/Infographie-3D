@@ -16,134 +16,15 @@ Robot::Robot(float x, float y, float z)
 
 void Robot::Draw()
 {
-// DEBUT DU BUSTE
-
-    // BUSTE
 
     GLUquadric* params = gluNewQuadric();
     gluQuadricTexture(params,GL_TRUE);
-    glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(0,0,0);
-        glColor3f(1,1,1);
-        gluCylinder(params,1.5,1.5,2,20,5);
-    glPopMatrix();
 
-Draw_handles();
-
-    // Couche inf�rieur du buste
-    glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(0,0,1);
-        glColor3f(0,0,0);
-        gluCylinder(params,1.55,1.55,1,30,10);
-    glPopMatrix();
-
-    //Rectangles d�cal�s qui traverse le buste
-    glPushMatrix();
-        glColor3f (1,0.65,0);
-        glRotatef(90,0,1,0);
-        glTranslatef(1,-1,-1.55);
-        glBegin(GL_POLYGON);
-            glVertex3f (0,0,0);
-            glVertex3f (0.25,-0.9,0);
-            glVertex3f (0,-0.9,0);
-            glVertex3f (-0.25,0,0);
-        glEnd();
-
-    glPopMatrix();
-        glPushMatrix();
-        glColor3f (1,0.65,0);
-        glRotatef(90,0,1,0);
-        glTranslatef(0.5,-1,-1.55);
-        glBegin(GL_POLYGON);
-            glVertex3f (0,0,0);
-            glVertex3f (0.25,-0.9,0);
-            glVertex3f (0,-0.9,0);
-            glVertex3f (-0.25,0,0);
-        glEnd();
-    glPopMatrix();
-
-    glPushMatrix();
-        glColor3f (1,0.65,0);
-        glRotatef(90,0,1,0);
-        glTranslatef(0,-1,-1.55);
-        glBegin(GL_POLYGON);
-            glVertex3f (0,0,0);
-            glVertex3f (0.25,-0.9,0);
-            glVertex3f (0,-0.9,0);
-            glVertex3f (-0.25,0,0);
-        glEnd();
-    glPopMatrix();
-
-        glPushMatrix();
-        glColor3f (1,0.65,0);
-        glRotatef(90,0,1,0);
-        glTranslatef(-0.5,-1,-1.55);
-        glBegin(GL_POLYGON);
-            glVertex3f (0,0,0);
-            glVertex3f (0.25,-0.9,0);
-            glVertex3f (0,-0.9,0);
-            glVertex3f (-0.25,0,0);
-        glEnd();
-    glPopMatrix();
-
-        glPushMatrix();
-        glColor3f (1,0.65,0);
-        glRotatef(90,0,1,0);
-        glTranslatef(-1,-1,-1.55);
-        glBegin(GL_POLYGON);
-            glVertex3f (0,0,0);
-            glVertex3f (0.25,-0.9,0);
-            glVertex3f (0,-0.9,0);
-            glVertex3f (-0.25,0,0);
-        glEnd();
-    glPopMatrix();
-
-    // Cercle au milieu du buste
-    glPushMatrix();
-         glRotatef(90,0,1,0);
-         glTranslatef(0,-1,-1.56);
-         glColor3f(0,0,0);
-         glScalef(0.5,0.5,0.1);
-         glutSolidTorus(0.5,0.5,30,30);
-    glPopMatrix();
-
-    // Remplissage du cercle au milieu du buste
-    glPushMatrix();
-         glRotatef(90,0,1,0);
-         glTranslatef(0,-1,-1.565);
-         glColor3f(1,0.65,0);
-         glScalef(0.45,0.45,0.1);
-         glutSolidTorus(0.5,0.5,30,30);
-    glPopMatrix();
-
-    // HAUT DU BUSTE
-
-   glPushMatrix();
-         glRotatef(90,1,0,0);
-         glTranslatef(0,0,0);
-         glColor3f(1,1,0);
-         glScalef(0.65,0.65,0.2);
-         glutSolidTorus(1.15,1.15,30,30);
-    glPopMatrix();
-
-    //BAS DU BUSTE
-
-    glPushMatrix();
-         glRotatef(90,1,0,0);
-         glTranslatef(0,0,2);
-         glColor3f(1,0,0);
-         glScalef(0.65,0.65,0.2);
-         glutSolidTorus(1.15,1.15,30,30);
-    glPopMatrix();
-
-// FIN DU BUSTE
-
-
-
-
-// DEBUT BRAS
+    Draw_torso();
+    Draw_handles();
+    Draw_custom_torso();
+    Draw_screws();
+    // DEBUT BRAS
 
     int left_arm_x = 0;
     int left_arm_y = 0.5;
@@ -919,6 +800,142 @@ Draw_handles();
 
 }
 
+void Robot::Draw_torso()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+    // BUSTE
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0,0,0);
+        glColor3f(0.86,0.86,0.86);
+        gluCylinder(params,1.5,1.5,2,50,50);
+    glPopMatrix();
+
+    // HAUT DU BUSTE
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,0);
+         glColor3f(0.5,0.5,0.5);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,50,50);
+    glPopMatrix();
+
+    // Rebord sur le haut du buste
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,-0.1);
+         glColor3f(0.86,0.86,0.86);
+         glScalef(0.78,0.78,0.3);
+         glutSolidTorus(0.8,1.15,50,50);
+    glPopMatrix();
+
+    //BAS DU BUSTE
+    glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,2);
+         glColor3f(0.86,0.86,0.86);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,30,30);
+    glPopMatrix();
+
+}
+
+void Robot::Draw_custom_torso()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+    // Couche inférieur du buste
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0,0,1);
+        glColor3f(0,0,0);
+        gluCylinder(params,1.55,1.55,1,30,10);
+    glPopMatrix();
+
+    //Rectangles décalés qui traverse le buste
+    glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(1,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+
+    glPopMatrix();
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.5,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(-0.5,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(-1,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+    // Cercle au milieu du buste
+    glPushMatrix();
+         glRotatef(90,0,1,0);
+         glTranslatef(0,-1,-1.56);
+         glColor3f(0,0,0);
+         glScalef(0.5,0.5,0.1);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    // Remplissage du cercle au milieu du buste
+    glPushMatrix();
+         glRotatef(90,0,1,0);
+         glTranslatef(0,-1,-1.565);
+         glColor3f(1,0.65,0);
+         glScalef(0.45,0.45,0.1);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+}
+
 void Robot::Draw_handles()
 {
 
@@ -960,7 +977,7 @@ void Robot::Draw_handles()
             glPushMatrix();
                  glRotatef(90,0,1,0);
                  glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical,support_depth);
-                 glColor3f(0.41,0.41,0.41);
+                 glColor3f(0.1,0.1,0.1);
                  glScalef(0.05,0.05,0.01);
                  glutSolidTorus(0.5,0.5,30,30);
             glPopMatrix();
@@ -968,14 +985,14 @@ void Robot::Draw_handles()
             glPushMatrix();
                 glRotatef(90,0,1,0);
                 glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical,support_depth - 0.1);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.10,15,5);
             glPopMatrix();
 
             glPushMatrix();
                  glRotatef(90,0,1,0);
                  glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical + difference_vertical,support_depth);
-                 glColor3f(0.41,0.41,0.41);
+                 glColor3f(0.1,0.1,0.1);
                  glScalef(0.05,0.05,0.01);
                  glutSolidTorus(0.5,0.5,30,30);
             glPopMatrix();
@@ -983,7 +1000,7 @@ void Robot::Draw_handles()
             glPushMatrix();
                 glRotatef(90,0,1,0);
                 glTranslatef(support_horizontal - (sign*i*2*0.09), support_vertical + difference_vertical,support_depth - 0.1);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.10,15,5);
             glPopMatrix();
 
@@ -993,7 +1010,7 @@ void Robot::Draw_handles()
                 // y: plan horizontal en positif vers la droite
                 // x: profondeur en positif vers l'arri�re
                 glTranslatef(handle_depth,handle_horizontal + (sign*i*2*0.09),handle_vertical);
-                glColor3f(0.41,0.41,0.41);
+                glColor3f(0.1,0.1,0.1);
                 gluCylinder(params,0.025,0.025,0.2,15,5);
             glPopMatrix();
 
@@ -1005,3 +1022,51 @@ void Robot::Draw_handles()
 
 }
 
+void Robot::Draw_screws()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+    // x profondeur
+    // y horizontale
+    // z verticale
+
+    int i;
+    int j;
+    int sign = 1;
+
+    float outline_horizontal = 0;
+    float outline_vertical = -0.35;
+    float outline_depth = 1;
+
+    float screw_horizontal = 0; // 0.3 - 0.6 puis -0.3 -0.6
+    float screw_vertical = - 0.36;
+    float screw_depth = 1;
+
+    for(i = 0; i < 2; i++){
+
+        if (i != 0){
+            sign = -1;
+            outline_horizontal = 0;
+            screw_horizontal = 0;
+        }
+
+        for(j = 1; j < 3; j ++){
+            glPushMatrix();
+                 glRotatef(90,1,0,0);
+                 glTranslatef(outline_depth,outline_horizontal + (sign*j*0.3),outline_vertical);
+                 glColor3f(0.1,0.1,0.1);
+                 glScalef(0.06,0.06,0.012);
+                 glutSolidTorus(0.5,0.5,30,30);
+            glPopMatrix();
+
+            glPushMatrix();
+                 glRotatef(90,1,0,0);
+                 glTranslatef(screw_depth,screw_horizontal + (sign*j*0.3),screw_vertical);
+                 glColor3f(0.75,0.75,0.75);
+                 glScalef(0.057,0.057,0.0114);
+                 glutSolidTorus(0.5,0.5,30,30);
+            glPopMatrix();
+        }
+    }
+}
