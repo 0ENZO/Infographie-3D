@@ -933,6 +933,85 @@ void Robot::Draw_custom_torso()
          glScalef(0.45,0.45,0.1);
          glutSolidTorus(0.5,0.5,30,30);
     glPopMatrix();
+    
+    /*TETE*/
+     //Visage
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0,0.6,0);
+         glColor3f(0.95,0.95,0.95);
+         glutSolidSphere(0.6,5,5);
+    glPopMatrix();
+
+    //Oreille droite
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.1,0.75,-0.3);
+         glColor3f(1,1,0);
+         glutSolidSphere(0.3,20,20);
+    glPopMatrix();
+
+    //Oreille gauche
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.1,0.75,0.3);
+         glColor3f(1,1,0);
+         glutSolidSphere(0.3,20,20);
+    glPopMatrix();
+
+    //Cheveux
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.05,0.6,0);
+         glColor3f(0,0,1);
+         glutSolidSphere(0.6,5,5);
+    glPopMatrix();
+
+    //Corne
+    glPushMatrix();
+        glRotatef(90,1,1,-0.5);
+        glTranslatef(0,0.38,-1.9);
+        glColor3f(0.80, 0.80, 0.80);
+        gluCylinder(params,0,0.26,0.9,10,1);
+    glPopMatrix();
+
+    //Yeux
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.35,0.2,-0.9);
+        glColor3f(1, 1, 0);
+        gluCylinder(params,0.1,0.1,0.06,5,1);
+    glPopMatrix();
+
+    //Yeux
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.35,-0.2,-0.9);
+        glColor3f(1, 1, 0);
+        gluCylinder(params,0.1,0.1,0.06,5,1);
+    glPopMatrix();
+
+    //Menton
+     glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.4,-0.1,-0.5);
+        glColor3f(0, 0, 0);
+        gluCylinder(params,0.01,0.01,0.2,5,1);
+    glPopMatrix();
+
+
+    //Menton
+     glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.4,0.1,-0.5);
+        glColor3f(0, 0, 0);
+        gluCylinder(params,0.01,0.01,0.2,5,1);
+    glPopMatrix();
+
+
+
+
+
 
 }
 
