@@ -9,37 +9,53 @@
 	</File>
 	<File name="include\Block.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="645" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="src\Robot.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7404" topLine="302" />
-		</Cursor>
-	</File>
-	<File name="include\Camera.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Block.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="741" topLine="87" />
+			<Cursor1 position="627" topLine="24" />
 		</Cursor>
 	</File>
 	<File name="include\Robot.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="441" topLine="7" />
+			<Cursor1 position="468" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="src\Block.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2684" topLine="87" />
+		</Cursor>
+	</File>
+	<File name="src\Robot.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3193" topLine="33" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="10" />
+			<Collapse line="16" />
+			<Collapse line="43" />
+			<Collapse line="70" />
+			<Collapse line="94" />
+			<Collapse line="817" />
+			<Collapse line="868" />
+			<Collapse line="966" />
+			<Collapse line="1052" />
+			<Collapse line="1101" />
+			<Collapse line="1246" />
+			<Collapse line="1393" />
+			<Collapse line="1558" />
+		</Folding>
+	</File>
+	<File name="include\Map.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="273" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src\main.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="176" />
+			<Cursor1 position="0" topLine="51" />
 		</Cursor>
 	</File>
-	<File name="include\Map.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Camera.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="273" topLine="7" />
+			<Cursor1 position="0" topLine="27" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

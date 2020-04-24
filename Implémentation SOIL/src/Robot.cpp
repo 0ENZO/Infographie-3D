@@ -1116,7 +1116,7 @@ void Robot::Draw_right_leg()
     // Devant pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(-0.6, 1, 5.1);
+        glTranslatef(-0.6, 0.95, 5.1);
         glColor3f(0.6,0,0);
         //x : profondeur  / y : horizontal / z : vertical
         glScalef(5, 8, 2);
@@ -1126,7 +1126,7 @@ void Robot::Draw_right_leg()
     // Dessous de pied bleu
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(-0.59, 1, 5.1);
+        glTranslatef(-0.59, 0.95, 5.1);
         glColor3f(0,0,0.6);
         glScalef(4.9, 8.01, 1.9);
         glutSolidCube(0.08);
@@ -1136,13 +1136,13 @@ void Robot::Draw_right_leg()
     glPushMatrix();
         glColor3f(0.6, 0, 0);
         glRotatef(95,0,1,0);
-        glTranslatef(-1.2,-4.6,-1.5);
+        glTranslatef(-1.15,-4.6,-1.5);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1.35);
             glVertex3f (0,-0.9,1);
-            glVertex3f (0.25,-0.9,1);
-            glVertex3f (0.25,0,1.35);
+            glVertex3f (0.225,-0.9,1);
+            glVertex3f (0.225,0,1.35);
         glEnd();
     glPopMatrix();
 
@@ -1150,13 +1150,13 @@ void Robot::Draw_right_leg()
     glPushMatrix();
         glColor3f(0,0,0.6);
         glRotatef(95,0,1,0);
-        glTranslatef(-1.2,-4.7,-1.485);
+        glTranslatef(-1.15,-4.7,-1.485);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1.35);
             glVertex3f (0,-0.9,1);
-            glVertex3f (0.25,-0.9,1);
-            glVertex3f (0.25,0,1.35);
+            glVertex3f (0.225,-0.9,1);
+            glVertex3f (0.225,0,1.35);
         glEnd();
     glPopMatrix();
 
@@ -1198,7 +1198,7 @@ void Robot::Draw_right_leg()
     // arriere pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(0.6, 1, 5.1);
+        glTranslatef(0.6, 0.9, 5.1);
         glColor3f(0.6,0,0);
         glScalef(5, 8, 2);
         glutSolidCube(0.08);
@@ -1207,7 +1207,7 @@ void Robot::Draw_right_leg()
     // dessous du pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(0.59, 1, 5.1);
+        glTranslatef(0.59, 0.9, 5.1);
         glColor3f(0,0,0.6);
         glScalef(4.9, 8.01, 1.9);
         glutSolidCube(0.08);
@@ -1217,13 +1217,13 @@ void Robot::Draw_right_leg()
     glPushMatrix();
         glColor3f(0.6, 0, 0);
         glRotatef(95,0,1,0);
-        glTranslatef(-1.2,-4.6,-1);
+        glTranslatef(-1.15,-4.6,-1);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1);
             glVertex3f (0,-0.9,1.35);
-            glVertex3f (0.25,-0.9,1.35);
-            glVertex3f (0.25,0,1);
+            glVertex3f (0.225,-0.9,1.35);
+            glVertex3f (0.225,0,1);
         glEnd();
     glPopMatrix();
 
@@ -1231,13 +1231,13 @@ void Robot::Draw_right_leg()
     glPushMatrix();
         glColor3f(0,0,0.6);
         glRotatef(95,0,1,0);
-        glTranslatef(-1.2,-4.7,-1.015);
+        glTranslatef(-1.15,-4.7,-1.015);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1);
             glVertex3f (0,-0.9,1.35);
-            glVertex3f (0.25,-0.9,1.35);
-            glVertex3f (0.25,0,1);
+            glVertex3f (0.225,-0.9,1.35);
+            glVertex3f (0.225,0,1);
         glEnd();
     glPopMatrix();
 
@@ -1261,7 +1261,7 @@ void Robot::Draw_left_leg()
     // devant pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(-0.6, -1, 5.1);
+        glTranslatef(-0.6, -1.05, 5.1);
         glColor3f(0.6,0,0);
         //x : profondeur  / y : horizontal / z : vertical
         glScalef(5, 8, 2);
@@ -1270,7 +1270,7 @@ void Robot::Draw_left_leg()
 
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(-0.59, -1, 5.1);
+        glTranslatef(-0.59, -1.05, 5.1);
         glColor3f(0,0,0.6);
         glScalef(4.9, 8.01, 1.9);
         glutSolidCube(0.08);
@@ -1280,13 +1280,13 @@ void Robot::Draw_left_leg()
     glPushMatrix();
         glColor3f(0.6, 0, 0);
         glRotatef(90,0,1,0);
-        glTranslatef(0.75,-4.6,-1.5);
+        glTranslatef(0.8,-4.6,-1.5);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1.35);
             glVertex3f (0,-0.9,1);
-            glVertex3f (0.25,-0.9,1);
-            glVertex3f (0.25,0,1.35);
+            glVertex3f (0.225,-0.9,1);
+            glVertex3f (0.225,0,1.35);
         glEnd();
     glPopMatrix();
 
@@ -1294,13 +1294,13 @@ void Robot::Draw_left_leg()
     glPushMatrix();
         glColor3f(0,0,0.6);
         glRotatef(90,0,1,0);
-        glTranslatef(0.75,-4.7,-1.485);
+        glTranslatef(0.8,-4.7,-1.485);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1.35);
             glVertex3f (0,-0.9,1);
-            glVertex3f (0.25,-0.9,1);
-            glVertex3f (0.25,0,1.35);
+            glVertex3f (0.225,-0.9,1);
+            glVertex3f (0.225,0,1.35);
         glEnd();
     glPopMatrix();
 
@@ -1345,7 +1345,7 @@ void Robot::Draw_left_leg()
     // arriere pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(0.6, -1, 5.1);
+        glTranslatef(0.6, -1.05, 5.1);
         glColor3f(0.6,0,0);
         glScalef(5, 8, 2);
         glutSolidCube(0.08);
@@ -1354,7 +1354,7 @@ void Robot::Draw_left_leg()
     // dessous du pied
     glPushMatrix();
         glRotatef(90,1,0,0);
-        glTranslatef(0.59, -1, 5.1);
+        glTranslatef(0.59, -1.05, 5.1);
         glColor3f(0,0,0.6);
         glScalef(4.9, 8.01, 1.9);
         glutSolidCube(0.08);
@@ -1364,13 +1364,13 @@ void Robot::Draw_left_leg()
     glPushMatrix();
         glColor3f(0.6, 0, 0);
         glRotatef(90,0,1,0);
-        glTranslatef(0.75,-4.6,-1);
+        glTranslatef(0.8,-4.6,-1);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1);
             glVertex3f (0,-0.9,1.35);
-            glVertex3f (0.25,-0.9,1.35);
-            glVertex3f (0.25,0,1);
+            glVertex3f (0.225,-0.9,1.35);
+            glVertex3f (0.225,0,1);
         glEnd();
     glPopMatrix();
 
@@ -1378,13 +1378,13 @@ void Robot::Draw_left_leg()
     glPushMatrix();
         glColor3f(0,0,0.6);
         glRotatef(90,0,1,0);
-        glTranslatef(0.75,-4.7,-1.015);
+        glTranslatef(0.8,-4.7,-1.015);
         glScalef(2.2,0.5,1);
         glBegin(GL_POLYGON);
             glVertex3f (0,0,1);
             glVertex3f (0,-0.9,1.35);
-            glVertex3f (0.25,-0.9,1.35);
-            glVertex3f (0.25,0,1);
+            glVertex3f (0.225,-0.9,1.35);
+            glVertex3f (0.225,0,1);
         glEnd();
     glPopMatrix();
 
