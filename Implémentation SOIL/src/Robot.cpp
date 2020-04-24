@@ -1555,17 +1555,6 @@ void Robot::Draw_head()
     glPopMatrix();
 }
 
-void Robot::Draw_shoulders()
-{
-
-}
-
-void Robot::Draw_arms()
-{
-
-
-}
-
 void Robot::Draw_back()
 {
     GLUquadric* params = gluNewQuadric();

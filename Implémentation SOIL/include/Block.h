@@ -36,6 +36,7 @@ class Block
         float x;
         float y;
         float z;
+
     protected:
 
     private:
