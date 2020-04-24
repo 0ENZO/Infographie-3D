@@ -38,7 +38,7 @@ void Robot::Draw()
      // epaule
      glPushMatrix();
         glTranslatef(0,0.5,1.8);
-        glColor3f(1,0,0);
+        glColor3f(0.6,0,0);
         glutSolidSphere(0.75,20,20);
      glPopMatrix();
 
@@ -54,7 +54,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -0.46, -3.2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.04,20,10);
@@ -79,7 +79,7 @@ void Robot::Draw()
      //D�co bras 2
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -1.09, -3.68);
         glRotated(180,1,0,0);
         glutSolidSphere(0.04,20,10);
@@ -89,7 +89,8 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.2,left_arm_z+0.5);
-        glColor3f(0.80, 0.80, 0.80);
+        //glColor3f(0.80, 0.80, 0.80);
+        glColor3f(0,1,0);
         gluCylinder(params,0.16,0.25,0.5,20,5);
     glPopMatrix();
 
@@ -97,7 +98,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.2,left_arm_z+1);
-        glColor3f(1, 0, 0);
+        glColor3f(0.6,0,0);
         gluCylinder(params,0.3,0.3,0.8,20,5);
     glPopMatrix();
 
@@ -107,7 +108,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.2,left_arm_z+2);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 10);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -116,7 +117,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.0,left_arm_z+2);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 18);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -125,7 +126,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.1,left_arm_z+2);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 19);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -134,7 +135,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(60,1,0,0);
         glTranslatef(left_arm_x,left_arm_y+2.35,left_arm_z+2);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 15);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -150,7 +151,7 @@ void Robot::Draw()
     //epaule
     glPushMatrix();
         glTranslatef(0,0.5,-1.8);
-        glColor3f(1,0,0);
+        glColor3f(0.6,0,0);
         glutSolidSphere(0.75,20,20);
     glPopMatrix();
 
@@ -166,7 +167,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -0.47, 3.25);
         glRotated(180,1,0,0);
         glutSolidSphere(0.04,20,10);
@@ -196,7 +197,7 @@ void Robot::Draw()
     //D�co bras 2
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -1.15, 3.65);
         glRotated(180,1,0,0);
         glutSolidSphere(0.04,20,10);
@@ -215,7 +216,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(130,1,0,0);
         glTranslatef(right_arm_x,right_arm_y-1.8,right_arm_z+3.45);
-        glColor3f(1, 0, 0);
+        glColor3f(0.6,0,0);
         gluCylinder(params,0.3,0.3,0.8,20,5);
     glPopMatrix();
 
@@ -225,7 +226,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(130,1,0,0);
         glTranslatef(right_arm_x,right_arm_y-1.8,right_arm_z+4.40);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 10);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -234,7 +235,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(130,1,0,0);
         glTranslatef(right_arm_x,right_arm_y-1.9,right_arm_z+4.40);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 18);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -243,7 +244,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(130,1,0,0);
         glTranslatef(right_arm_x,right_arm_y-1.7,right_arm_z+4.40);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 19);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -252,7 +253,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(130,1,0,0);
         glTranslatef(right_arm_x+0.2,right_arm_y-1.7,right_arm_z+4.40);
-        glColor3f(0, 0, 1);
+        glColor3f(0,0,0.6);
         glScalef(2, 2, 15);
         glutSolidCube(0.04);
     glPopMatrix();
@@ -272,7 +273,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 1.2, -2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -280,7 +281,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.25, 1, -2.25);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -288,7 +289,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.25, 1, -2.25);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -296,7 +297,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.25, 0.7, -2.43);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -304,7 +305,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.25, 0.7, -2.43);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -312,7 +313,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 0.5, -2.5);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -320,7 +321,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.5, 0.8, -2.2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -328,7 +329,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.5, 0.8, -2.2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -336,7 +337,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, 0.3, -2.35);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -344,7 +345,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, 0.3, -2.35);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -364,7 +365,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 1.25, -1.56);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -372,7 +373,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -0.23, -2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -380,7 +381,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, 1.19, -1.65);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -388,7 +389,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, 1.15, -1.57);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -396,7 +397,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, -0.10, -2.1);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -404,7 +405,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, -0.1, -2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -412,42 +413,42 @@ void Robot::Draw()
 
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.7,0.9 ,-1.8);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.7,0.9,-1.65);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.76, 0.6, -1.9);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
      glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.76, 0.6, -1.75);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.6, 0.1, -2.05);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.6, 0.1, -1.9);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -455,14 +456,14 @@ void Robot::Draw()
 
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.75,0.3 ,-2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
      glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.75,0.3 ,-1.85);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -486,7 +487,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 1.2, 2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -494,7 +495,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.25, 1, 2.25);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -502,7 +503,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.25, 1, 2.25);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -510,7 +511,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.25, 0.7, 2.43);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -518,7 +519,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.25, 0.7, 2.43);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -526,7 +527,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 0.5, 2.5);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -534,7 +535,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.5, 0.8, 2.2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -542,7 +543,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.5, 0.8, 2.2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -550,7 +551,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, 0.3, 2.35);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -558,7 +559,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, 0.3, 2.35);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -587,7 +588,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, 1.25, 1.55);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -595,7 +596,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0, -0.23, 2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -603,7 +604,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, 1.19, 1.65);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -611,7 +612,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, 1.15, 1.57);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -619,7 +620,7 @@ void Robot::Draw()
 
     glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.4, -0.10, 2.1);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -627,7 +628,7 @@ void Robot::Draw()
 
      glPopMatrix();
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.4, -0.1, 2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -635,42 +636,42 @@ void Robot::Draw()
 
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.7,0.9 ,1.8);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.7,0.9,1.65);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
       glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.76, 0.6, 1.9);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
      glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.76, 0.6, 1.7);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.6, 0.1, 2.05);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.6, 0.1, 1.9);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -678,14 +679,14 @@ void Robot::Draw()
 
 
     glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(0.75,0.3 ,2);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
     glPopMatrix();
 
      glPushMatrix();
-        glColor3f(1, 0.85, 0);
+        glColor3f(1,0.65,0);
         glTranslated(-0.75,0.3 ,1.85);
         glRotated(180,1,0,0);
         glutSolidSphere(0.07,20,10);
@@ -700,7 +701,7 @@ void Robot::Draw()
     glPushMatrix();
         glRotatef(90,1,0,0);
         glTranslatef(1,0,0);
-        glColor3f(0, 0, 1);
+        glColor3f(0, 0,0.6);
         gluCylinder(params,1,1,2,20,10);
     glPopMatrix();
 
@@ -800,9 +801,18 @@ void Robot::Draw_torso()
     glPushMatrix();
          glRotatef(90,1,0,0);
          glTranslatef(0,0,2);
-         glColor3f(0.86,0.86,0.86);
+         glColor3f(0.6,0,0);
          glScalef(0.65,0.65,0.2);
          glutSolidTorus(1.15,1.15,30,30);
+    glPopMatrix();
+
+    // Rebord sur le bas du buste
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,1.9);
+         glColor3f(0.86,0.86,0.86);
+         glScalef(0.78,0.78,0.3);
+         glutSolidTorus(0.8,1.15,50,50);
     glPopMatrix();
 
 }
@@ -821,8 +831,9 @@ void Robot::Draw_custom_torso()
     glPopMatrix();
 
     //Rectangles décalés qui traverse le buste
+    /*
     glPushMatrix();
-        glColor3f (1,0.65,0);
+        glColor3f(1,0.65,0);
         glRotatef(90,0,1,0);
         glTranslatef(1,-1,-1.55);
         glBegin(GL_POLYGON);
@@ -832,6 +843,7 @@ void Robot::Draw_custom_torso()
             glVertex3f (-0.25,0,0);
         glEnd();
     glPopMatrix();
+    */
 
     glPushMatrix();
         glColor3f (1,0.65,0);
@@ -857,7 +869,7 @@ void Robot::Draw_custom_torso()
         glEnd();
     glPopMatrix();
 
-        glPushMatrix();
+    glPushMatrix();
         glColor3f (1,0.65,0);
         glRotatef(90,0,1,0);
         glTranslatef(-0.5,-1,-1.55);
@@ -869,7 +881,8 @@ void Robot::Draw_custom_torso()
         glEnd();
     glPopMatrix();
 
-        glPushMatrix();
+    /*
+    glPushMatrix();
         glColor3f (1,0.65,0);
         glRotatef(90,0,1,0);
         glTranslatef(-1,-1,-1.55);
@@ -880,6 +893,7 @@ void Robot::Draw_custom_torso()
             glVertex3f (-0.25,0,0);
         glEnd();
     glPopMatrix();
+    */
 
     // Cercle au milieu du buste
     glPushMatrix();
@@ -928,7 +942,7 @@ void Robot::Draw_custom_torso()
     glPushMatrix();
          glRotatef(0,0,0,0);
          glTranslatef(0.05,0.6,0);
-         glColor3f(0,0,1);
+         glColor3f(0,0,0.6);
          glutSolidSphere(0.6,5,5);
     glPopMatrix();
 
@@ -944,7 +958,7 @@ void Robot::Draw_custom_torso()
     glPushMatrix();
         glRotatef(90,1,0,0);
         glTranslatef(-0.35,0.2,-0.9);
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         gluCylinder(params,0.1,0.1,0.06,5,1);
     glPopMatrix();
 
@@ -952,7 +966,7 @@ void Robot::Draw_custom_torso()
     glPushMatrix();
         glRotatef(90,1,0,0);
         glTranslatef(-0.35,-0.2,-0.9);
-        glColor3f(1, 1, 0);
+        glColor3f(1,0.65,0);
         gluCylinder(params,0.1,0.1,0.06,5,1);
     glPopMatrix();
 
