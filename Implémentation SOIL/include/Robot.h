@@ -19,6 +19,7 @@ class Robot
         void Draw_screws();
         void Draw_right_leg();
         void Draw_left_leg();
+        void Draw_head();
 
         float x;
         float y;
