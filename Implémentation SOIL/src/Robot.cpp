@@ -246,6 +246,7 @@ Draw_handles();
     Draw_screws();
     Draw_right_leg();
     Draw_left_leg();
+    Draw_head();
 
     // DEBUT BRAS
 
@@ -1332,85 +1333,6 @@ void Robot::Draw_custom_torso()
          glutSolidTorus(0.5,0.5,30,30);
     glPopMatrix();
 
-    /*TETE*/
-     //Visage
-    glPushMatrix();
-         glRotatef(0,0,0,0);
-         glTranslatef(0,0.6,0);
-         glColor3f(0.95,0.95,0.95);
-         glutSolidSphere(0.6,5,5);
-    glPopMatrix();
-
-    //Oreille droite
-    glPushMatrix();
-         glRotatef(0,0,0,0);
-         glTranslatef(0.1,0.75,-0.3);
-         glColor3f(1,1,0);
-         glutSolidSphere(0.3,20,20);
-    glPopMatrix();
-
-    //Oreille gauche
-    glPushMatrix();
-         glRotatef(0,0,0,0);
-         glTranslatef(0.1,0.75,0.3);
-         glColor3f(1,1,0);
-         glutSolidSphere(0.3,20,20);
-    glPopMatrix();
-
-    //Cheveux
-    glPushMatrix();
-         glRotatef(0,0,0,0);
-         glTranslatef(0.05,0.6,0);
-         glColor3f(0,0,0.6);
-         glutSolidSphere(0.6,5,5);
-    glPopMatrix();
-
-    //Corne
-    glPushMatrix();
-        glRotatef(90,1,1,-0.5);
-        glTranslatef(0,0.38,-1.9);
-        glColor3f(0.80, 0.80, 0.80);
-        gluCylinder(params,0,0.26,0.9,10,1);
-    glPopMatrix();
-
-    //Yeux
-    glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(-0.35,0.2,-0.9);
-        glColor3f(1,0.65,0);
-        gluCylinder(params,0.1,0.1,0.06,5,1);
-    glPopMatrix();
-
-    //Yeux
-    glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(-0.35,-0.2,-0.9);
-        glColor3f(1,0.65,0);
-        gluCylinder(params,0.1,0.1,0.06,5,1);
-    glPopMatrix();
-
-    //Menton
-     glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(-0.4,-0.1,-0.5);
-        glColor3f(0, 0, 0);
-        gluCylinder(params,0.01,0.01,0.2,5,1);
-    glPopMatrix();
-
-
-    //Menton
-     glPushMatrix();
-        glRotatef(90,1,0,0);
-        glTranslatef(-0.4,0.1,-0.5);
-        glColor3f(0, 0, 0);
-        gluCylinder(params,0.01,0.01,0.2,5,1);
-    glPopMatrix();
-
-
-
-
-
-
 }
 
 void Robot::Draw_handles()
@@ -1838,4 +1760,127 @@ void Robot::Draw_left_leg()
         glEnd();
     glPopMatrix();
 
+}
+
+void Robot::Draw_head()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+     //Visage
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0,0.6,0);
+         glColor3f(0.95,0.95,0.95);
+         glutSolidSphere(0.6,5,5);
+    glPopMatrix();
+
+    //Oreille droite
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.1,0.75,-0.3);
+         glColor3f(1,1,0);
+         glutSolidSphere(0.3,20,20);
+    glPopMatrix();
+
+    //Oreille gauche
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.1,0.75,0.3);
+         glColor3f(1,1,0);
+         glutSolidSphere(0.3,20,20);
+    glPopMatrix();
+
+    //Cheveux
+    glPushMatrix();
+         glRotatef(0,0,0,0);
+         glTranslatef(0.05,0.6,0);
+         glColor3f(0,0,1);
+         glutSolidSphere(0.6,5,5);
+    glPopMatrix();
+
+    //Corne
+    glPushMatrix();
+        glRotatef(90,1,1,-0.5);
+        glTranslatef(0,0.38,-1.9);
+        glColor3f(0.80, 0.80, 0.80);
+        gluCylinder(params,0,0.26,0.9,10,1);
+    glPopMatrix();
+
+    //Yeux
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.35,0.15,-0.9);
+        glColor3f(1, 1, 0);
+        gluCylinder(params,0.12,0.12,0.06,5,1);
+    glPopMatrix();
+
+    //Yeux
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.35,-0.15,-0.9);
+        glColor3f(1, 1, 0);
+        gluCylinder(params,0.12,0.12,0.06,5,1);
+    glPopMatrix();
+
+    //Menton
+    glPushMatrix();
+         glRotatef(90,0,1,0);
+         glColor3f(0.92,0.92, 0.92);
+         glTranslatef(0.2,0.15,-0.45);
+         glBegin(GL_TRIANGLES);
+         glVertex2f(0.2, 0.0);
+         glVertex2f(-0.2, 0.0);
+         glVertex2f(0.05, 0.3);
+         glEnd();
+    glPopMatrix();
+
+     glPushMatrix();
+         glRotatef(90,0,1,0);
+         glColor3f(0.92, 0.92, 0.92);
+         glTranslatef(0.1,0.15,-0.45);
+         glBegin(GL_TRIANGLES);
+         glVertex2f(0.2, 0.0);
+         glVertex2f(-0.2, 0.0);
+         glVertex2f(0.05, 0.3);
+         glEnd();
+    glPopMatrix();
+
+     glPushMatrix();
+         glRotatef(90,0,1,0);
+         glColor3f(0.92, 0.92, 0.92);
+         glTranslatef(-0.25,0.15,-0.45);
+         glBegin(GL_TRIANGLES);
+         glVertex2f(0.2, 0.0);
+         glVertex2f(-0.2, 0.0);
+         glVertex2f(0.05, 0.3);
+         glEnd();
+    glPopMatrix();
+
+     glPushMatrix();
+         glRotatef(90,0,1,0);
+         glColor3f(0.92, 0.92, 0.92);
+         glTranslatef(-0.35,0.15,-0.45);
+         glBegin(GL_TRIANGLES);
+         glVertex2f(0.2, 0.0);
+         glVertex2f(-0.2, 0.0);
+         glVertex2f(0.05, 0.3);
+         glEnd();
+    glPopMatrix();
+
+     //Bouche
+     glPushMatrix();
+        glRotatef(90,1,0,0);
+        glColor3f(0, 0, 0);
+        glTranslatef(-0.05, 0, -0.6);
+        gluCylinder(params,0.56,0.56,0.01,12,12);
+    glPopMatrix();
+
+    //Nez
+    glPushMatrix();
+        glRotatef(0,0,0,0);
+        glTranslatef(-0.5,0.78,0);
+        glColor3f(0.6, 0.6, 0.6);
+        gluCylinder(params,0.1,0.1,0.06,5,1);
+    glPopMatrix();
 }
