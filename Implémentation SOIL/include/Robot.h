@@ -17,6 +17,8 @@ class Robot
         void Draw_custom_torso();
         void Draw_handles();
         void Draw_screws();
+        void Draw_right_leg();
+        void Draw_left_leg();
 
         float x;
         float y;

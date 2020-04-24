@@ -24,6 +24,9 @@ void Robot::Draw()
     Draw_handles();
     Draw_custom_torso();
     Draw_screws();
+    Draw_right_leg();
+    Draw_left_leg();
+
     // DEBUT BRAS
 
     int left_arm_x = 0;
@@ -254,44 +257,6 @@ void Robot::Draw()
         glutSolidCube(0.04);
     glPopMatrix();
 // FIN BRAS
-
-// DEBUT JAMBE
-
-    /* JAMBE DROITE */
-    glPushMatrix();
-        glRotatef(93,1,0,0);
-        glTranslatef(0, -0.5, 3.5);
-        glColor3f(0.95, 0.95, 0.95);
-        glScalef(2, 2, 20);
-        glutSolidCube(0.13);
-    glPopMatrix();
-
-    glPushMatrix();
-        glRotatef(93,1,0,0);
-        glTranslatef(0, -0.5, 4.9);
-        glColor3f(1, 0, 0);
-        glScalef(13, 8, 2);
-        glutSolidCube(0.08);
-    glPopMatrix();
-
-    /* JAMBE GAUCHE */
-    glPushMatrix();
-        glRotatef(87,1,0,0);
-        glTranslatef(0, 0.5, 3.5);
-        glColor3f(0.95, 0.95, 0.95);
-        glScalef(2, 2, 20);
-        glutSolidCube(0.13);
-    glPopMatrix();
-
-    glPushMatrix();
-        glRotatef(93,1,0,0);
-        glTranslatef(0, 1, 4.9);
-        glColor3f(1, 0, 0);
-        glScalef(13, 8, 2);
-        glutSolidCube(0.08);
-    glPopMatrix();
-
-// FIN JAMBE
 
      // EPAULE WITH SPHERE / GAUCHE
 
@@ -866,9 +831,9 @@ void Robot::Draw_custom_torso()
             glVertex3f (0,-0.9,0);
             glVertex3f (-0.25,0,0);
         glEnd();
-
     glPopMatrix();
-        glPushMatrix();
+
+    glPushMatrix();
         glColor3f (1,0.65,0);
         glRotatef(90,0,1,0);
         glTranslatef(0.5,-1,-1.55);
@@ -933,7 +898,7 @@ void Robot::Draw_custom_torso()
          glScalef(0.45,0.45,0.1);
          glutSolidTorus(0.5,0.5,30,30);
     glPopMatrix();
-    
+
     /*TETE*/
      //Visage
     glPushMatrix();
@@ -1148,4 +1113,296 @@ void Robot::Draw_screws()
             glPopMatrix();
         }
     }
+}
+
+void Robot::Draw_right_leg()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+    // Jambe
+    glPushMatrix();
+        glRotatef(87,1,0,0);
+        glTranslatef(0, 0.5, 3.15);
+        // glColor3f(0.95, 0.95, 0.95);
+        glColor3f(0,0,0);
+        glScalef(2, 2, 20);
+        glutSolidCube(0.13);
+    glPopMatrix();
+
+    // Devant pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.6, 1, 5.1);
+        glColor3f(0.6,0,0);
+        //x : profondeur  / y : horizontal / z : vertical
+        glScalef(5, 8, 2);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // Dessous de pied bleu
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.59, 1, 5.1);
+        glColor3f(0,0,0.6);
+        glScalef(4.9, 8.01, 1.9);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    //Diagonale
+    glPushMatrix();
+        glColor3f(0.6, 0, 0);
+        glRotatef(95,0,1,0);
+        glTranslatef(-1.2,-4.6,-1.5);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1.35);
+            glVertex3f (0,-0.9,1);
+            glVertex3f (0.25,-0.9,1);
+            glVertex3f (0.25,0,1.35);
+        glEnd();
+    glPopMatrix();
+
+    // Diagonale dessous de pied
+    glPushMatrix();
+        glColor3f(0,0,0.6);
+        glRotatef(95,0,1,0);
+        glTranslatef(-1.2,-4.7,-1.485);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1.35);
+            glVertex3f (0,-0.9,1);
+            glVertex3f (0.25,-0.9,1);
+            glVertex3f (0.25,0,1.35);
+        glEnd();
+    glPopMatrix();
+
+    // cylindre milieu pied
+    glPushMatrix();
+        glTranslatef(0,-4.5,0.65);
+        glColor3f(0.6,0,0);
+        gluCylinder(params,0.1,0.1,0.5,20,20);
+    glPopMatrix();
+
+    // surcouche en bleu
+    glPushMatrix();
+        glTranslatef(0,-4.5,0.65);
+        glColor3f(0,0,0.6);
+        gluCylinder(params,0.105,0.105,0.15,20,20);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0,-4.5,1);
+        glColor3f(0,0,0.6);
+        gluCylinder(params,0.105,0.105,0.15,20,20);
+    glPopMatrix();
+
+    // côtés du cylindre
+    glPushMatrix();
+         glTranslatef(0,-4.5,1.15);
+         glColor3f(0.6, 0, 0);
+         glScalef(0.1,0.1,0.02);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    glPushMatrix();
+         glTranslatef(0,-4.5,0.65);
+         glColor3f(0.6, 0, 0);
+         glScalef(0.1,0.1,0.02);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    // arriere pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0.6, 1, 5.1);
+        glColor3f(0.6,0,0);
+        glScalef(5, 8, 2);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // dessous du pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0.59, 1, 5.1);
+        glColor3f(0,0,0.6);
+        glScalef(4.9, 8.01, 1.9);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // diagonale
+    glPushMatrix();
+        glColor3f(0.6, 0, 0);
+        glRotatef(95,0,1,0);
+        glTranslatef(-1.2,-4.6,-1);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1);
+            glVertex3f (0,-0.9,1.35);
+            glVertex3f (0.25,-0.9,1.35);
+            glVertex3f (0.25,0,1);
+        glEnd();
+    glPopMatrix();
+
+    // diagonale dessous de pied
+    glPushMatrix();
+        glColor3f(0,0,0.6);
+        glRotatef(95,0,1,0);
+        glTranslatef(-1.2,-4.7,-1.015);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1);
+            glVertex3f (0,-0.9,1.35);
+            glVertex3f (0.25,-0.9,1.35);
+            glVertex3f (0.25,0,1);
+        glEnd();
+    glPopMatrix();
+
+}
+
+void Robot::Draw_left_leg()
+{
+    GLUquadric* params = gluNewQuadric();
+    gluQuadricTexture(params,GL_TRUE);
+
+    // Jambe
+    glPushMatrix();
+        glRotatef(93,1,0,0);
+        glTranslatef(0, -0.5, 3.15);
+        //glColor3f(0.95, 0.95, 0.95);
+        glColor3f(0,0,0);
+        glScalef(2, 2, 20);
+        glutSolidCube(0.13);
+    glPopMatrix();
+
+    // devant pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.6, -1, 5.1);
+        glColor3f(0.6,0,0);
+        //x : profondeur  / y : horizontal / z : vertical
+        glScalef(5, 8, 2);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(-0.59, -1, 5.1);
+        glColor3f(0,0,0.6);
+        glScalef(4.9, 8.01, 1.9);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // diagonale
+    glPushMatrix();
+        glColor3f(0.6, 0, 0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.75,-4.6,-1.5);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1.35);
+            glVertex3f (0,-0.9,1);
+            glVertex3f (0.25,-0.9,1);
+            glVertex3f (0.25,0,1.35);
+        glEnd();
+    glPopMatrix();
+
+    //diagonale dessous
+    glPushMatrix();
+        glColor3f(0,0,0.6);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.75,-4.7,-1.485);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1.35);
+            glVertex3f (0,-0.9,1);
+            glVertex3f (0.25,-0.9,1);
+            glVertex3f (0.25,0,1.35);
+        glEnd();
+    glPopMatrix();
+
+    // cylindre milieu pied
+
+    glPushMatrix();
+        glTranslatef(0,-4.5,-1.3);
+        glColor3f(0.6,0,0);
+        gluCylinder(params,0.1,0.1,0.5,20,20);
+    glPopMatrix();
+
+    // surcouche en bleu
+    glPushMatrix();
+        glTranslatef(0,-4.5,-1.3);
+        glColor3f(0,0,0.6);
+        gluCylinder(params,0.105,0.105,0.15,20,20);
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(0,-4.5,-0.95);
+        glColor3f(0,0,0.6);
+        gluCylinder(params,0.105,0.105,0.15,20,20);
+    glPopMatrix();
+
+    // côtés du cylindre
+    glPushMatrix();
+         glTranslatef(0,-4.5,-1);
+         glColor3f(0.6, 0, 0);
+         glScalef(0.1,0.1,0.02);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    glPushMatrix();
+         glTranslatef(0,-4.5,-1.3);
+         glColor3f(0.6, 0, 0);
+         glScalef(0.1,0.1,0.02);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    // fin cylindre
+
+    // arriere pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0.6, -1, 5.1);
+        glColor3f(0.6,0,0);
+        glScalef(5, 8, 2);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // dessous du pied
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0.59, -1, 5.1);
+        glColor3f(0,0,0.6);
+        glScalef(4.9, 8.01, 1.9);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // diagonale
+    glPushMatrix();
+        glColor3f(0.6, 0, 0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.75,-4.6,-1);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1);
+            glVertex3f (0,-0.9,1.35);
+            glVertex3f (0.25,-0.9,1.35);
+            glVertex3f (0.25,0,1);
+        glEnd();
+    glPopMatrix();
+
+    // dessous diagonale
+    glPushMatrix();
+        glColor3f(0,0,0.6);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.75,-4.7,-1.015);
+        glScalef(2.2,0.5,1);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,1);
+            glVertex3f (0,-0.9,1.35);
+            glVertex3f (0.25,-0.9,1.35);
+            glVertex3f (0.25,0,1);
+        glEnd();
+    glPopMatrix();
+
 }
