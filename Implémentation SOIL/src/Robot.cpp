@@ -14,11 +14,231 @@ Robot::Robot(float x, float y, float z)
     this->z = z;
 }
 
+void yellow_triangle_on_sword_back() {
+
+    int i = 0;
+    float z = -1.25;
+    float height_triangle = 0.07;
+    float length_triangle = 0.07;
+
+    for(i = 0; i < 10; i++)
+    {
+        glPushMatrix();
+        glRotatef(77, 1, 0, 0);
+        glColor3f(0.80, 0.80, 0);
+        glTranslatef(2.085,-0.5,z);
+
+        glBegin(GL_QUADS);
+            glVertex3f (0,0, 0); //top
+            glVertex3f (0,length_triangle, height_triangle/2);// left
+            glVertex3f (0, 0, height_triangle);// bottom
+            glVertex3f (0, -length_triangle, height_triangle/2);// right
+        glEnd();
+        glPopMatrix();
+
+        z += 0.10;
+    }
+
+}
+
+void yellow_triangle_on_sword_front() {
+
+    int i = 0;
+    float z = -1.25;
+    float height_triangle = 0.07;
+    float length_triangle = 0.07;
+
+    for(i = 0; i < 10; i++)
+    {
+        glPushMatrix();
+        glRotatef(77, 1, 0, 0);
+        glColor3f(0.80, 0.80, 0);
+        glTranslatef(1.915,-0.5,z);
+
+        glBegin(GL_QUADS);
+            glVertex3f (0,0, 0); //top
+            glVertex3f (0,length_triangle, height_triangle/2);// left
+            glVertex3f (0, 0, height_triangle);// bottom
+            glVertex3f (0, -length_triangle, height_triangle/2);// right
+        glEnd();
+        glPopMatrix();
+
+        z += 0.10;
+    }
+
+}
+
+void black_stripes_fabric_left() {
+
+    float z = 0.05;
+    int i = 0;
+
+    for(i = 0; i < 13; i++)
+    {
+        glPushMatrix();
+        glRotatef(90, 1, 0, 0);
+        glColor3f(0.1, 0.1, 0.1);
+        glTranslatef(2.5,0.8,z);
+
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0, 0.1); //bottom left
+            glVertex3f (0,0,0);// top left
+            glVertex3f (0, -0.6, 0);// top right
+            glVertex3f (0, -0.6, 0.1);//bottom right
+        glEnd();
+        glPopMatrix();
+
+        z = z + 0.15;
+    }
+}
+
+void black_stripes_fabric_right() {
+
+    float z = 0.05;
+    int i = 0;
+
+    for(i = 0; i < 13; i++)
+    {
+        glPushMatrix();
+        glRotatef(90, 1, 0, 0);
+        glColor3f(0.1, 0.1, 0.1);
+        glTranslatef(2.5,-0.2,z);
+
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0, 0.1); //bottom left
+            glVertex3f (0,0,0);// top left
+            glVertex3f (0, -0.6, 0);// top right
+            glVertex3f (0, -0.6, 0.1);//bottom right
+        glEnd();
+        glPopMatrix();
+
+        z = z + 0.15;
+    }
+}
+
 void Robot::Draw()
 {
 
     GLUquadric* params = gluNewQuadric();
     gluQuadricTexture(params,GL_TRUE);
+
+
+Draw_handles();
+
+    // Couche inf�rieur du buste
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(0,0,1);
+        glColor3f(0,0,0);
+        gluCylinder(params,1.55,1.55,1,30,10);
+    glPopMatrix();
+
+    //Rectangles d�cal�s qui traverse le buste
+    glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(1,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+
+    glPopMatrix();
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0.5,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(0,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(-0.5,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+        glPushMatrix();
+        glColor3f (1,0.65,0);
+        glRotatef(90,0,1,0);
+        glTranslatef(-1,-1,-1.55);
+        glBegin(GL_POLYGON);
+            glVertex3f (0,0,0);
+            glVertex3f (0.25,-0.9,0);
+            glVertex3f (0,-0.9,0);
+            glVertex3f (-0.25,0,0);
+        glEnd();
+    glPopMatrix();
+
+    // Cercle au milieu du buste
+    glPushMatrix();
+         glRotatef(90,0,1,0);
+         glTranslatef(0,-1,-1.56);
+         glColor3f(0,0,0);
+         glScalef(0.5,0.5,0.1);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    // Remplissage du cercle au milieu du buste
+    glPushMatrix();
+         glRotatef(90,0,1,0);
+         glTranslatef(0,-1,-1.565);
+         glColor3f(1,0.65,0);
+         glScalef(0.45,0.45,0.1);
+         glutSolidTorus(0.5,0.5,30,30);
+    glPopMatrix();
+
+    // HAUT DU BUSTE
+
+   glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,0);
+         glColor3f(1,1,0);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,30,30);
+    glPopMatrix();
+
+    //BAS DU BUSTE
+
+    glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(0,0,2);
+         glColor3f(1,0,0);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(1.15,1.15,30,30);
+    glPopMatrix();
+
+
+// FIN DU BUSTE
+
+
+
+
+// DEBUT BRAS
 
     Draw_torso();
     Draw_handles();
@@ -28,6 +248,7 @@ void Robot::Draw()
     Draw_left_leg();
 
     // DEBUT BRAS
+
 
     int left_arm_x = 0;
     int left_arm_y = 0.5;
@@ -705,63 +926,261 @@ void Robot::Draw()
     glPopMatrix();
 
 
-     glTranslatef(3, 0, 0);
-    glColor3f(0.3, 0.3, 0.3);
-    glRectf(0.3, 0.5, 0.5, 0.5);
-/*
-    glTranslatef(1.5f, 0.0f, -7.0f);  // Move right and into the screen
+    //COTE GAUCHE
+        float length_quad = 0.6;
 
-   glBegin(GL_QUADS);                // Begin drawing the color cube with 6 quads
-      // Top face (y = 1.0f)
-      // Define vertices in counter-clockwise (CCW) order with normal pointing out
-      glColor3f(0.0f, 1.0f, 0.0f);     // Green
-      glVertex3f( 1.0f, 1.0f, -1.0f);
-      glVertex3f(-1.0f, 1.0f, -1.0f);
-      glVertex3f(-1.0f, 1.0f,  1.0f);
-      glVertex3f( 1.0f, 1.0f,  1.0f);
+        // carre bleu
+        glPushMatrix();
+            glRotatef(90, 0, 1, 0);
+            glColor3f(0, 0, 1);
+            glTranslatef(-1, -1.2, 2.1); // z , y, x
 
-      // Bottom face (y = -1.0f)
-      glColor3f(1.0f, 0.5f, 0.0f);     // Orange
-      glVertex3f( 1.0f, -1.0f,  1.0f);
-      glVertex3f(-1.0f, -1.0f,  1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f( 1.0f, -1.0f, -1.0f);
+            glBegin(GL_QUADS);
+                glVertex3f (0,0, 0); //bottom left
+                glVertex3f (0,0,-length_quad);// top left
+                glVertex3f (0, length_quad, -length_quad);// top right
+                glVertex3f (0, length_quad, 0);//bottom right
+            glEnd();
+        glPopMatrix();
 
-      // Front face  (z = 1.0f)
-      glColor3f(1.0f, 0.0f, 0.0f);     // Red
-      glVertex3f( 1.0f,  1.0f, 1.0f);
-      glVertex3f(-1.0f,  1.0f, 1.0f);
-      glVertex3f(-1.0f, -1.0f, 1.0f);
-      glVertex3f( 1.0f, -1.0f, 1.0f);
+        /* ROUAGES */
 
-      // Back face (z = -1.0f)
-      glColor3f(1.0f, 1.0f, 0.0f);     // Yellow
-      glVertex3f( 1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f,  1.0f, -1.0f);
-      glVertex3f( 1.0f,  1.0f, -1.0f);
+        // rouage gros 1
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.3, -2, 1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.28,0.28,30,30);
+        glPopMatrix();
 
-      // Left face (x = -1.0f)
-      glColor3f(0.0f, 0.0f, 1.0f);     // Blue
-      glVertex3f(-1.0f,  1.0f,  1.0f);
-      glVertex3f(-1.0f,  1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f,  1.0f);
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.3, -2, 1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.2,0.2,30,30);
+        glPopMatrix();
 
-      // Right face (x = 1.0f)
-      glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(1.0f,  1.0f, -1.0f);
-      glVertex3f(1.0f,  1.0f,  1.0f);
-      glVertex3f(1.0f, -1.0f,  1.0f);
-      glVertex3f(1.0f, -1.0f, -1.0f);
-   glEnd();  // End of drawing color-cube
-    */
+        // rouage gros 2
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.5, -2, 1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.28,0.28,30,30);
+        glPopMatrix();
 
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.5, -2, 1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.2,0.2,30,30);
+        glPopMatrix();
+
+        // rouage petit 1
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.7, -2.3, 1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.15,0.15,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.7, -2.3, 1.03); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.1,0.1,30,30);
+        glPopMatrix();
+
+        // rouage petit 2
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.05, -2.3, 1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.15,0.15,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.05, -2.3, 1.03); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.1,0.1,30,30);
+        glPopMatrix();
+
+    /* ROUE GRISE GAUCHE */
+
+    // roue grise gauche
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(2,0.5,0);
+        glColor3f(0.60,0.60,0.60);
+        gluCylinder(params,0.5,0.5,2,20,1);
+    glPopMatrix();
+
+        // haut de la roue gauche
+    glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(2,0.5,0);
+         glColor3f(0.60,0.60,0.60);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(0.38,0.38,30,30);
+    glPopMatrix();
+
+    // bas de la roue gauche
+     glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(2,0.5,1.9);
+         glColor3f(0.60,0.60,0.60);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(0.38,0.38,30,30);
+    glPopMatrix();
+
+    /* ROUE GRISE DROITE */
+
+    // roue grise droite
+    glPushMatrix();
+        glRotatef(90,1,0,0);
+        glTranslatef(2,-0.5,0);
+        glColor3f(0.60,0.60,0.60);
+        gluCylinder(params,0.5,0.5,2,20,1);
+    glPopMatrix();
+
+    // haut de la roue droite
+    glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(2,-0.5,0);
+         glColor3f(0.60,0.60,0.60);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(0.38,0.38,30,30);
+    glPopMatrix();
+
+    // bas de la roue droite
+     glPushMatrix();
+         glRotatef(90,1,0,0);
+         glTranslatef(2,-0.5,1.9);
+         glColor3f(0.60,0.60,0.60);
+         glScalef(0.65,0.65,0.2);
+         glutSolidTorus(0.38,0.38,30,30);
+    glPopMatrix();
+
+
+    black_stripes_fabric_left();
+    black_stripes_fabric_right();
+
+    // carre bleu
+    glPushMatrix();
+        glRotatef(90, 0, 1, 0);
+        glColor3f(0, 0, 1);
+        glTranslatef(1, -1.2, 2.1); // z , y, x // 2,-0.5,0
+
+        glBegin(GL_QUADS);
+            glVertex3f (0,0, 0); //bottom left
+            glVertex3f (0,0,-length_quad);// top left
+            glVertex3f (0, length_quad, -length_quad);// top right
+            glVertex3f (0, length_quad, 0);//bottom right
+        glEnd();
+    glPopMatrix();
+
+     /* ROUAGES */
+
+        // rouage gros 1
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.3, -2, -1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.28,0.28,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.3, -2, -1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.2,0.2,30,30);
+        glPopMatrix();
+
+        // rouage gros 2
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.5, -2, -1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.28,0.28,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.5, -2, -1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.2,0.2,30,30);
+        glPopMatrix();
+
+        // rouage petit 1
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.7, -2.3, -1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.15,0.15,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-0.7, -2.3, -1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.1,0.1,30,30);
+        glPopMatrix();
+
+        // rouage petit 2
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.05, -2.3, -1); // +y,+x,+z
+            glColor3f(0.86,0.86,0.86);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.15,0.15,30,30);
+        glPopMatrix();
+
+        glPushMatrix();
+            glRotatef(90,0,0,1);
+            glTranslatef(-1.05, -2.3, -1.02); // +y,+x,+z
+            glColor3f(0.2, 0.2, 0.2);
+            glScalef(0.5,0.5,0.1);
+            glutSolidTorus(0.1,0.1,30,30);
+        glPopMatrix();
+
+
+    /* EPEE */
+
+    glPushMatrix();
+        glRotatef(77,1,0,0);
+        glTranslatef(2,-0.5,-0.5);
+        glColor3f(1, 0, 0);
+        glScalef(2, 2, 20);
+        glutSolidCube(0.08);
+    glPopMatrix();
+
+    // haut de l'epee
+    glPushMatrix();
+         glRotatef(77,1,0,0);
+         glTranslatef(2,-0.5,-1.32);
+         glColor3f(0.80, 0.80, 0);
+         glutSolidTorus(0.05,0.05,30,30);
+    glPopMatrix();
+
+    yellow_triangle_on_sword_back();
+    yellow_triangle_on_sword_front();
 
 
 // FIN DOS
-
-
 
 }
 
