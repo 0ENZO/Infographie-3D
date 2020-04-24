@@ -20,6 +20,9 @@ class Robot
         void Draw_right_leg();
         void Draw_left_leg();
         void Draw_head();
+        void Draw_back();
+        void Draw_shoulders();
+        void Draw_arms();
 
         float x;
         float y;
